@@ -1,0 +1,38 @@
+package com.del.employeeapp.service;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.del.employeeapp.dao.EmployeeDaoImpl;
+import com.del.employeeapp.dao.EmployeeDaoJDBCImpl;
+import com.del.employeeapp.dao.IEmployeeDao;
+import com.del.employeeapp.model.Employee;
+
+public class EmployeeServiceImpl implements IEmployeeService {
+
+	IEmployeeDao dao = new EmployeeDaoJDBCImpl();
+	
+	@Override
+	public Employee addEmployee(Employee employee) throws SQLException{
+		
+		// logic for validation etc.
+		return dao.addEmployee(employee);
+	}
+	
+	@Override
+	public boolean deleteEmployee(int employeeId) {
+		
+		return dao.deleteEmployee(employeeId);
+	}
+	
+	@Override
+	public Employee findEmployee(int employeeId) {
+		return dao.findEmployee(employeeId);
+	}
+	
+	@Override
+	public List<Employee> getAllEmployees() {
+		return dao.getAllEmployees();
+	}
+	
+}

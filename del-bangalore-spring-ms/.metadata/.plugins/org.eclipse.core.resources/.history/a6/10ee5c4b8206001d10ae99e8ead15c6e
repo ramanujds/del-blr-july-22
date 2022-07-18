@@ -1,0 +1,5 @@
+package com.del.employeeapp.dao;
+
+public class EmployeeDaoImpl {
+
+}

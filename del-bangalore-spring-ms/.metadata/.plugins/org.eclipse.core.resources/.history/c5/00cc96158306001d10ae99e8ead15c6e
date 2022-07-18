@@ -1,0 +1,5 @@
+package com.del.employeeapp.service;
+
+public interface IEmployeeService {
+
+}

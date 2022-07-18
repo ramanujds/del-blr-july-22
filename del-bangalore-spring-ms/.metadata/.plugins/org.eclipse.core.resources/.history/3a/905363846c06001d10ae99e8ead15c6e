@@ -1,0 +1,22 @@
+package javabasics;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
+
+public class EmployeeOperations {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter a date : "); // yyyy-MM-dd
+		String dateString = scan.next();
+		LocalDate date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("dd-MMM-yyyy"));
+		
+		System.out.println(date);
+		
+		
+
+	}
+
+}
