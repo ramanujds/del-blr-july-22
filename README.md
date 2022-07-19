@@ -19,3 +19,19 @@ https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/ht
 </beans>
 
 ```
+
+## Spring Steps
+
+1. Create a maven project
+1. Add Spring Dependency to POM.XML
+1. Create a source folder with name resources
+1. Create a file beans.xml under resources
+1. Mention the spring-context schema
+1. Create beans -
+```xml
+	<bean id="..." class="...">
+		<properties name=".." value/ref ="...">
+	</bean>
+```
+1. Create an object of ApplicationContext
+1. Fetching the beans using getBean()
