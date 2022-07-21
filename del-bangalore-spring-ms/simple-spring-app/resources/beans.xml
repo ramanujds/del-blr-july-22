@@ -4,8 +4,10 @@
     xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> 
-        
-        <bean class="com.del.app.Tyre" id="mrf"/>
+      <context:component-scan base-package="com.del.app"/>  
+      <context:property-placeholder location="car.properties"/>
+      
+       <bean class="com.del.app.Tyre" id="mrf"/>
         
         <bean class="com.del.app.MusicSystem" id="sony"/>
         
@@ -16,12 +18,6 @@
         <property name="tyres" ref="mrf"/>
         <property name="musicSystem" ref="sony"/> 
         </bean>
-        
-        <bean id="bmw" class="com.del.app.Car">
-        <!-- <constructor-arg name="regNo" value="MH02-2026"/> -->
-        </bean>
-        
-       
 
 </beans>
 

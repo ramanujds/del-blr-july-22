@@ -1,8 +1,9 @@
 package com.del.app;
 
-import lombok.Data;
+import org.springframework.stereotype.Component;
 
-@Data
+import lombok.Data;
+@Component("ceat")
 public class Tyre {
 
 	public void applyBrake() {

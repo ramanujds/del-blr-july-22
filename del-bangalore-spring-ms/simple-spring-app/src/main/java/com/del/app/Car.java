@@ -1,5 +1,10 @@
 package com.del.app;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,12 +12,20 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Component
 public class Car {
 
+	@Value("${car.regno}")
 	private String regNo;
+	@Value("${car.color}")
 	private String color;
+	@Value("${car.model}")
 	private String model;
-	private Tyre tyres;
+	@Autowired
+	@Qualifier("ceat")
+	private Tyre tyre;
+	@Autowired
+	@Qualifier("bose")
 	private MusicSystem musicSystem;
 	
 	public void start() {
@@ -24,7 +37,7 @@ public class Car {
 	}
 	
 	public void brake() {
-		tyres.applyBrake();
+		tyre.applyBrake();
 	}
 	
 	public void showCarInfo() {
