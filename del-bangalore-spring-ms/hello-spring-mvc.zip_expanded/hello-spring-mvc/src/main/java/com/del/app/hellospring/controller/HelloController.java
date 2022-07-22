@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.del.app.hellospring.model.Person;
 import com.del.app.hellospring.repository.PersonRepository;
@@ -62,35 +63,36 @@ public class HelloController {
 	@PostMapping("/add-person")
 	public String addPerson(@ModelAttribute("person") Person person) {
 		repo.addPerson(person);
-		return "show-person.jsp";
+		return "show-person";
 	}
 	
 	@GetMapping("/search-person")
 	public String searchPerson(@RequestParam("personName") String personName, Model m) {
 		Person person = repo.searchPerson(personName);
 		m.addAttribute("person",person);
-		return "show-person.jsp";
+		return "show-person";
 		
 	}
 	
 	@GetMapping("/bye")
 	public String sayBye() {
 		System.out.println("Bye Guys..");
-		return "show.jsp";
+		return "show";
 	}
 	
 	@RequestMapping
 	public String showHomePage() {
-		return "index.jsp";
+		return "index";
 	}
+	
 	@GetMapping("/show-all")
-	public String showAllPersons(Model m) {
-		
+	public ModelAndView showAllPersons() {
+		ModelAndView mv = new ModelAndView();
 		List<Person> personList = repo.getAllPerson();
-		m.addAttribute("list",personList);
+		mv.addObject("list",personList);
+		mv.setViewName("show-all");
 		
-		
-		return "show-all.jsp";
+		return mv;
 	}
 	
 	
