@@ -3,7 +3,9 @@ package com.del.employeeapp.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -38,8 +40,27 @@ public class EmployeeDaoJDBCImpl implements IEmployeeDao {
 	}
 
 	@Override
-	public Employee findEmployee(int employeeId) {
-		// TODO Auto-generated method stub
+	public Employee findEmployee(int employeeId) throws SQLException{
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/employeedb","root","password");
+		if(conn!=null) {
+			
+			smt=conn.prepareStatement("select * from employee where employee_id=?");
+			smt.setInt(1, employeeId);
+			
+			
+			ResultSet rs = smt.executeQuery();
+			Employee employee = new Employee();
+			employee.setEmployeeId(employeeId);
+			employee.setEmployeeName(rs.getString("employee_name"));
+			employee.setSalary(rs.getFloat("salary"));
+			LocalDate date = LocalDate.parse(rs.getString("date_joined"));
+			employee.setDateJoined(date);
+			return employee;
+			
+		}
+		else {
+			System.out.println("Connection Failed");
+		}
 		return null;
 	}
 

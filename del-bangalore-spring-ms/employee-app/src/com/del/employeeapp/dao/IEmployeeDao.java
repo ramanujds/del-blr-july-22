@@ -9,7 +9,7 @@ public interface IEmployeeDao {
 
 	public Employee addEmployee(Employee employee) throws SQLException;
 	
-	public Employee findEmployee(int employeeId);
+	public Employee findEmployee(int employeeId) throws SQLException;
 	
 	public boolean deleteEmployee(int employeeId);
 	
