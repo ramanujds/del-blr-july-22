@@ -35,3 +35,8 @@ https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/ht
 ```
 1. Create an object of ApplicationContext
 1. Fetching the beans using getBean()
+
+
+## Some simple videos on Spring MVC with Spring Boot
+
+https://youtube.com/playlist?list=PLrOxLng9KmrckQyT5HEGJ_8cFIbbNX-X7
