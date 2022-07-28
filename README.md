@@ -40,3 +40,29 @@ https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/ht
 ## Some simple videos on Spring MVC with Spring Boot
 
 https://youtube.com/playlist?list=PLrOxLng9KmrckQyT5HEGJ_8cFIbbNX-X7
+
+## Microservices Service Discovery Steps :
+
+**Service Registration**
+-------------------------
+
+ - Created a spring boot app with eureka-server dependency only
+ - Added annotation @EnableEurekaServer
+ - Strat the eureka-server-app
+ - Added eureka-client dependencies to menu and recipe services
+ - Added annotation @EnableEurekaClient
+ - started multiple instances of recipe-service
+ - -Dserver.port=8101
+ - started menu service
+ - browse and check eureka-dashboard
+
+
+
+**Service Discovery**
+-------------------------
+ - localhost:xxxx replaced with the service name
+ - [recipeServiceUrl: http://FOODIE-APP-RECIPE-SERVICE/recipe/]
+
+**Load Balancing**
+-------------------------
+ - add @LoadBalanced with RestTemplate bean
