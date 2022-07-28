@@ -24,7 +24,6 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor @NoArgsConstructor
 @Entity
 @Table(name = "food_item")
-@XmlRootElement
 public class FoodItem {
 
 	@Id

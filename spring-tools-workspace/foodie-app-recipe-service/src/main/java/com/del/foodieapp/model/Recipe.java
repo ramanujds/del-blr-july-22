@@ -8,4 +8,6 @@ public class Recipe {
 
 	private List<Meal> meals;
 	
+	private int serverPort;
+	
 }
