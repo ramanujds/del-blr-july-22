@@ -75,22 +75,22 @@ https://youtube.com/playlist?list=PLrOxLng9KmrckQyT5HEGJ_8cFIbbNX-X7
 - Create REST Endpoints to fetch and add product information
 - Add to Wishlist
 
-**GET
+**GET**
 * localhost:8000/products/[PRODUCT-ID]
 
-**POST
+**POST**
 * localhost:8000/products
 
-**GET
+**GET**
 * localhost:8000/products/wishlist/[PRODUCT-ID]
 
 **Wishlist Service**
 - Create REST endpoints to add product to wishlist and fetch all the products in wishlist
 
-**GET
+**GET**
 * localhost:8200/wishlist
 
-**POST
+**POST**
 * localhost:8200/wishlist
 
 
