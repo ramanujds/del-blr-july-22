@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: foodie-app-api-gateway
+    
+  cloud:
+    gateway:
+      routes:
+        - id: menu-service
+          uri:
+            lb://FOODIE-APP-MENU-SERVICE
+          predicates:
+          - Path=/menu/**
+          
+        - id: recipe-service
+          uri:
+            lb://FOODIE-APP-RECIPE-SERVICE
+          predicates:
+          - Path=/recipe/**
+    
+server:
+  port: 8888
+  
+ ## localhost:8888/menu/1001
+ ## localhost:8888/recipe/pizza
+ 

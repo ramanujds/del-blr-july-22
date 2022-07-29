@@ -15,3 +15,32 @@ recipeServiceUrl: http://FOODIE-APP-RECIPE-SERVICE/recipe/
 
 server:
   port: 8100
+  
+
+  
+resilience4j:
+  circuitbreaker:
+    instances:
+      recipe-service-cb:
+        registerHealthIndicator: true
+        eventConsumerBufferSize: 10
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        failureRateThreshold: 50
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 1
+        slidingWindowSize: 10
+        waitDurationInOpenState: 2s
+        slidingWindowType: COUNT_BASED
+        
+        
+management:
+  health:
+    circuitbreakers:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      show-details: always
