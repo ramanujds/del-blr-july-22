@@ -1,16 +1,13 @@
 spring:
-#  profiles:
-#    active:
-#    - dev
   application:
     name: foodie-app-menu-service
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: org.h2.Driver
     password: password
-    url: jdbc:mysql://localhost:3306/foodie_db
-    username: root
+    url: jdbc:h2:mem:foodie_db
+    username: sa
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
+    database-platform: org.hibernate.dialect.H2Dialect
     generate-ddl: true
     show-sql: true
 

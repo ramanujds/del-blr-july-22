@@ -1,7 +1,4 @@
 spring:
-#  profiles:
-#    active:
-#    - dev
   application:
     name: foodie-app-menu-service
   datasource:
@@ -17,7 +14,7 @@ spring:
 recipeServiceUrl: http://FOODIE-APP-RECIPE-SERVICE/recipe/
 
 server:
-  port: 8100
+  port: 8105
   
 
   
