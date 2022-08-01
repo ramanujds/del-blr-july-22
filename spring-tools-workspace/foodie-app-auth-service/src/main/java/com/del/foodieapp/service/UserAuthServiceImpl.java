@@ -32,5 +32,9 @@ public class UserAuthServiceImpl implements UserAuthService {
 		savedUser.setPassword("************");
 		return savedUser;
 	}
+	@Override
+	public UserInfo getUserByName(String username) {
+		return repo.findByUsername(username);
+	}
 	
 }

@@ -9,4 +9,6 @@ public interface UserAuthService {
 	
 	public UserInfo saveUserInfo(UserInfo user);
 	
+	public UserInfo getUserByName(String username);
+	
 }
