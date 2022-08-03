@@ -43,7 +43,10 @@ management:
   endpoints:
     web:
       exposure:
-        include: health
+        include: "*"
   endpoint:
     health:
       show-details: always
+    httptrace:
+      enabled: true
+  

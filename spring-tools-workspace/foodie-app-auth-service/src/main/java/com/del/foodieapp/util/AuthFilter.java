@@ -17,7 +17,10 @@ import org.springframework.stereotype.Component;
 import com.del.foodieapp.model.UserInfo;
 import com.del.foodieapp.service.UserAuthService;
 
+import lombok.extern.slf4j.Slf4j;
+
 @Component
+@Slf4j
 public class AuthFilter implements Filter {
 
 	@Autowired
@@ -30,6 +33,7 @@ public class AuthFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
 
+		log.info("Request Intercepted");
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 
@@ -41,19 +45,25 @@ public class AuthFilter implements Filter {
 
 		String auth = req.getHeader("auth");
 		if (auth != null) {
+			log.info("Auth Header Fetched");
 			if (!auth.isEmpty()) {
 				String username = jwtUtil.decodeToken(auth);
+				log.info("Feched JWT :" +auth);
 				UserInfo user = service.getUserByName(username);
+				log.info("Fetched user : "+user.toString());
 				if (user == null) {
+					log.error("No User Found");
 					res.setStatus(HttpStatus.UNAUTHORIZED.value());
 					return;
 				}
+				log.info("Logged in as "+username);
 			}
-
+			
 			chain.doFilter(request, response);
 		}
 
 		else {
+			log.error("No Auth Header Present");
 			res.setStatus(HttpStatus.UNAUTHORIZED.value());
 			return;
 		}

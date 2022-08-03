@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.del.foodieapp.model.FoodItem;
 import com.del.foodieapp.model.Recipe;
+import com.del.foodieapp.proxy.RecipeServiceProxy;
 import com.del.foodieapp.repository.IFoodItemRepository;
 
 @Service
@@ -22,6 +23,9 @@ public class FoodItemServiceImpl implements IFoodItemService {
 	
 	@Autowired
 	RestTemplate recipeClinet;
+	
+	@Autowired
+	private RecipeServiceProxy recipeProxy;
 
 	@Override
 	public FoodItem addFoodItem(FoodItem item) {
@@ -65,8 +69,12 @@ public class FoodItemServiceImpl implements IFoodItemService {
 		return savedItem;
 	}
 	
+//	public Recipe getRecipe(String itemName) {
+//		return recipeClinet.getForObject(recipeServiceUrl+itemName, Recipe.class);
+//	}
+	
 	public Recipe getRecipe(String itemName) {
-		return recipeClinet.getForObject(recipeServiceUrl+itemName, Recipe.class);
+		return recipeProxy.getRecipe(itemName);
 	}
 	
 }
