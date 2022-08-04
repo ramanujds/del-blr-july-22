@@ -96,4 +96,17 @@ https://youtube.com/playlist?list=PLrOxLng9KmrckQyT5HEGJ_8cFIbbNX-X7
 
 
 
+### CORS Config API Gateway
 
+```yml
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+          cors-configurations: 
+            '[/**]':
+              allowed-origins: "*"
+              allowed-methods: "*"
+              allowed-headers: "*"
+
+
+```
