@@ -35,3 +35,18 @@ https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/ht
 ```
 1. Create an object of ApplicationContext
 1. Fetching the beans using getBean()
+
+
+## CORS Configuration
+
+```yaml
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE
+      globalcors:
+          cors-configurations: 
+            '[/**]':
+              allowed-origins: "*"
+              allowed-methods: "*"
+              allowed-headers: "*"
+
+```
