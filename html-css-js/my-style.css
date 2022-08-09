@@ -1,0 +1,21 @@
+h1,p{
+    background-color: cornflowerblue;
+}
+
+#p1{
+    color: red;
+}
+
+.style1{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    font-style: italic;
+    color: rgb(9, 79, 43);
+    border: 1px solid black;
+    padding: 50px;
+    margin-left: 100px;
+}
+
+p:hover{
+    background-color: burlywood;
+}

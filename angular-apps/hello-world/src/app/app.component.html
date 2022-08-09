@@ -1,0 +1,16 @@
+<h1>Hello World</h1>
+<p>Hey evryone</p>
+
+<app-greet></app-greet>
+
+
+<app-footer></app-footer>
+
+<h2>{{title}}</h2>
+
+<h3>{{date}}</h3>
+
+<input type="text" placeholder="Enter your name" #username>
+<button (click)="printName(username.value)" class="btn btn-success">Enter</button>
+<h1>{{personName}}</h1>
+<!-- <button (click)="showMessage()" [disabled]="count<10" class="btn btn-danger">Exit</button> -->

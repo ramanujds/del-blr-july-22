@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .prvnxt{
+            text-align: center;
+        }
+        button{
+            min-width: 100px;
+            max-width: 100px;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td colspan="2">
+                <img id="picture" src="images/lily.jpg" alt="No image found" height="300px" width="400px">
+            </td>
+        </tr>
+        <tr>
+            <td class="prvnxt"> <button onclick="previous()"> &lt;&lt; Previous </button> </td>
+            <td class="prvnxt"><button onclick="next()"> Next &gt;&gt; </button> </td>
+        </tr>
+    </table>
+
+</body>
+
+<script>
+    var picture = document.getElementById("picture");
+    var pictures = ["lily.jpg","nature.jpg","poppies.jpg","rose.jpg"];
+    var current = 0;
+    function previous(){
+        if(current==0){
+            alert("This is the first image")
+        }
+        else{
+            current--;
+            picture.src="images/"+pictures[current]
+        }
+    }
+
+    function next(){
+        if(current==pictures.length-1){
+            alert("This is the last image")
+            return;
+        }
+        current++;
+        picture.src="images/"+pictures[current]
+    }
+
+</script>
+</html>
