@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { GreetComponent } from './greet/greet.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddPersonComponent } from './add-person/add-person.component';
+import { ShortenPipe } from './shorten.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     GreetComponent,
     FooterComponent,
-    AddPersonComponent
+    AddPersonComponent,
+    ShortenPipe
   ],
   imports: [
     BrowserModule,
