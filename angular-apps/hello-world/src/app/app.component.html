@@ -1,16 +1,7 @@
-<h1>Hello World</h1>
-<p>Hey evryone</p>
 
-<app-greet></app-greet>
-
-
-<app-footer></app-footer>
-
-<h2>{{title}}</h2>
-
-<h3>{{date}}</h3>
-
-<input type="text" placeholder="Enter your name" #username>
-<button (click)="printName(username.value)" class="btn btn-success">Enter</button>
-<h1>{{personName}}</h1>
+<p><input type="text" placeholder="Enter your name" #personName></p>
+<p><input type="email" placeholder="Enter your Email" #email></p>
+<p><input type="number" placeholder="Enter your age" #age></p>
+<button (click)="printPerson(personName.value,age.value,email.value)" class="btn btn-success">Enter</button>
+{{person|json}}
 <!-- <button (click)="showMessage()" [disabled]="count<10" class="btn btn-danger">Exit</button> -->
