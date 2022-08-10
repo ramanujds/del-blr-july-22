@@ -1,2 +1,11 @@
-<p>greet works!</p>
-<button class="btn btn-dark">Click me</button>
+<input type="text" placeholder="Enter name" #usernameT>
+<button (click)="addItems(usernameT.value)" class="btn btn-dark">Add to list</button>
+<button [disabled]="list.length==0" (click)="deleteItem()" class="btn btn-danger">Remove</button>
+
+<p> List of User :</p>
+    <ul *ngFor="let uname of list">
+        <li>{{uname}}</li>
+    </ul>
+
+<p class="text-danger" *ngIf="list.length==0">No item present</p>
+

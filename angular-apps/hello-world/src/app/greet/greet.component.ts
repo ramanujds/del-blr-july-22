@@ -9,7 +9,18 @@ export class GreetComponent implements OnInit {
 
   constructor() { }
 
+  list:Array<string>=[];
+
   ngOnInit(): void {
+  }
+
+  addItems(username:string){
+    this.list.push(username);
+    console.log(this.list)
+  }
+
+  deleteItem(){
+    this.list.pop();
   }
 
 }

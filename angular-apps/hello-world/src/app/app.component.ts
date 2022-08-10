@@ -8,10 +8,12 @@ import { Person } from './Person';
 })
 export class AppComponent implements OnInit {
   title = 'my-first-angular-app';
-
+  comments?:string;
   count=100;
   personName:string='';
-  person?:Person;
+  //person?:Person;
+
+  personList:Array<Person>=[];
 
   date:Date = new Date();
 
@@ -33,9 +35,10 @@ export class AppComponent implements OnInit {
     this.personName=username;
   }
 
-  printPerson(personName:string,age:any,email:string){
-    this.person=new Person(personName,email,age);
-    console.log(this.person)
+  addPerson(personName:string,age:any,email:string){
+    let person=new Person(personName,email,age);
+    this.personList.push(person)
+    console.log(this.personList)
   }
 
 }
