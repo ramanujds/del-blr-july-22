@@ -1,10 +1,10 @@
-
+<!-- 
 <p><input type="text" placeholder="Enter your name" #personName></p>
 <p><input type="email" placeholder="Enter your Email" #email></p>
-<p><input type="number" placeholder="Enter your age" #age></p>
+<p><input type="number" placeholder="Enter your age" #age [(ngModel)]="ageValue"></p>
 <p><input type="text" placeholder="Enter some coments" [(ngModel)]="comments"></p>
 <p>{{comments}}</p>
-<p><button (click)="addPerson(personName.value,age.value,email.value)" class="btn btn-success">Add</button></p>
+<p><button  [ngClass]="ageValue<18?'btn btn-danger':'btn btn-success'" (click)="addPerson(personName.value,age.value,email.value)" class="btn btn-success">Add</button></p>
 
 <table class="table table-dark">
     <thead>
@@ -15,14 +15,21 @@
         </tr>
     </thead>
     <tbody>
+        
         <tr *ngFor="let person of personList">
-            <td>{{person.personName}}</td>
+
+            <!-- {'background-color':getBackgroundColor(person.age)} -->
+            
+            <!-- <td [ngStyle]="{'background-color':getBackgroundColor(person.age)}">{{person.personName}}</td>
             <td>{{person.email}}</td>
             <td>{{person.age}}</td>
         </tr>
+
     </tbody>
 </table>
 
-<!-- <button (click)="showMessage()" [disabled]="count<10" class="btn btn-danger">Exit</button>
+<button (click)="showMessage()" [disabled]="count<10" class="btn btn-danger">Exit</button>
 
-<!-- <app-greet></app-greet> -->
+<app-greet></app-greet>  -->
+
+<app-add-person></app-add-person>

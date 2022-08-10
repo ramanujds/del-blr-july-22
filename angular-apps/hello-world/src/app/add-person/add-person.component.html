@@ -1,0 +1,49 @@
+
+<div class="container">
+<h2>Input Person Details</h2>
+
+<form class="form-group" #personForm="ngForm"  (submit)="addPerson(personForm)">
+    <div class="row">
+        <div class="col-md-2">
+<label for="personName">Name </label>
+</div>
+<div class="col-md-10">
+<input type="text" name="personName" minlength="3" required id="personName" #personNameT="ngModel" 
+                   ngModel placeholder="Enter Name"
+                   class="form-control"
+                   >
+                </div>
+<small class="text-danger" *ngIf="personNameT.errors?.['required'] && personNameT.touched">Name is required</small>
+<small class="text-danger" *ngIf="personNameT.errors?.['minlength'] && personNameT.touched">Name is invalid</small>
+
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+    <label for="age">Age </label>
+    </div>
+    <div class="col-md-10">
+    <input type="number" min="1" max="100" required name="age" id="age" #ageT="ngModel"  
+                       ngModel placeholder="Enter Age"
+                       class="form-control"
+                       >
+    </div>
+    </div>
+
+    <div class="row">
+    <div class="col-md-2">
+        <label for="email">Email </label>
+</div>
+<div class="col-md-10">
+        <input type="email" email required name="email" id="email" #emailT="ngModel"  
+                           ngModel placeholder="Enter Email"
+                           class="form-control"
+                           >
+        </div>
+        </div>
+        <div>
+            <button type="submit" [disabled]="personForm.invalid" class="btn btn-primary">Add Person</button>
+        </div>
+
+</form>
+</div>

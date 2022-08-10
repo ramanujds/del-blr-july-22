@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GreetComponent } from './greet/greet.component';
 import { FooterComponent } from './footer/footer.component';
+import { AddPersonComponent } from './add-person/add-person.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GreetComponent,
-    FooterComponent
+    FooterComponent,
+    AddPersonComponent
   ],
   imports: [
     BrowserModule,

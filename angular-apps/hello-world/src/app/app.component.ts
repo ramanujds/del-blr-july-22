@@ -11,9 +11,26 @@ export class AppComponent implements OnInit {
   comments?:string;
   count=100;
   personName:string='';
-  //person?:Person;
+  ageValue:number=0;
 
-  personList:Array<Person>=[];
+  
+
+  getButtonClass(age:any){
+    if(age<18){
+      return 'btn btn-danger'
+    }
+    return 'btn btn-success'
+  }
+
+  getBackgroundColor(age:number){
+    if(age<18){
+      return 'red'
+    }
+    return 'black'
+  }
+ 
+
+  personList:Array<any>=[];
 
   date:Date = new Date();
 
