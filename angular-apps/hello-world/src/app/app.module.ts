@@ -8,6 +8,7 @@ import { GreetComponent } from './greet/greet.component';
 import { FooterComponent } from './footer/footer.component';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { ShortenPipe } from './shorten.pipe';
+import { ViewPersonComponent } from './view-person/view-person.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ShortenPipe } from './shorten.pipe';
     GreetComponent,
     FooterComponent,
     AddPersonComponent,
-    ShortenPipe
+    ShortenPipe,
+    ViewPersonComponent
   ],
   imports: [
     BrowserModule,

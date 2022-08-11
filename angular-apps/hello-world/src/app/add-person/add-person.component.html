@@ -1,5 +1,5 @@
 
-<div class="container">
+
 <h2>Input Person Details</h2>
 
 <form class="form-group" #personForm="ngForm"  (submit)="addPerson(personForm.value)">
@@ -60,30 +60,4 @@
 
 </form>
 
-<div>
-    <table class="table table-striped table-hover">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Date Joined</th>
-                <th>Salary</th>
-                <th>Email</th>
-                <th>Option</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let person of personList">
-                <td>{{person.personName|shorten}}</td>
-                <td>{{person.joinDate|date}}</td>
-                <td>{{person.salary|currency:'EUR'}}</td>
-                <td>{{person.email}}</td>
-                <td><button class="btn btn-danger"
-                     (click)="deletePerson(person.personName)">Delete</button></td>
-            </tr>
-        </tbody>
-    </table>
 
-
-</div>
-
-</div>
