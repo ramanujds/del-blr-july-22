@@ -15,6 +15,7 @@ import { AppStyleDirective } from './app-style.directive';
 import { UpdatePersonComponent } from './update-person/update-person.component';
 import { AddPersonReactiveComponent } from './add-person-reactive/add-person-reactive.component';
 import { HeaderComponent } from './header/header.component';
+import { ViewDetailsComponent } from './view-details/view-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HeaderComponent } from './header/header.component';
     AppStyleDirective,
     UpdatePersonComponent,
     AddPersonReactiveComponent,
-    HeaderComponent
+    HeaderComponent,
+    ViewDetailsComponent
   ],
   imports: [
     BrowserModule,

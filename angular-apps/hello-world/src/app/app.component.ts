@@ -52,10 +52,10 @@ export class AppComponent implements OnInit {
     this.personName=username;
   }
 
-  addPerson(personName:string,age:any,email:string){
-    let person=new Person(personName,email,age);
-    this.personList.push(person)
-    console.log(this.personList)
-  }
+  // addPerson(personName:string,age:any,email:string){
+  //   let person=new Person(personName,email,age);
+  //   this.personList.push(person)
+  //   console.log(this.personList)
+  // }
 
 }
