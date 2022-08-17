@@ -1,5 +1,9 @@
 # Notes and Steps
 
+## Angular Sessions
+
+https://drive.google.com/drive/folders/1HebnyjDMsC-7-h2J3F5s-BxwDGwJ5fYZ?usp=sharing
+
 ## Spring Context Schema Link
 
 https://docs.spring.io/spring-framework/docs/4.2.x/spring-framework-reference/html/xsd-configuration.html#xsd-config-body-schemas-context
@@ -110,3 +114,4 @@ https://youtube.com/playlist?list=PLrOxLng9KmrckQyT5HEGJ_8cFIbbNX-X7
 
 
 ```
+
