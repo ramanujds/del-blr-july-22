@@ -6,27 +6,7 @@ import { Person } from './Person';
 })
 export class PersonDataService {
 
-  personList:Array<Person>=[
-    {
-      personName:'Kumar',
-      joinDate:new Date('2020-10-10'),
-      salary:45000.0,
-      email:'kumar@yahoo.com'
-    },
-    {
-      personName:'Rohit',
-      joinDate:new Date('2020-10-10'),
-      salary:45000.0,
-      email:'rohit@yahoo.com'
-    },
-    {
-      personName:'Suraj',
-      joinDate:new Date('2020-10-10'),
-      salary:45000.0,
-      email:'suraj@yahoo.com'
-    }
-
-  ];
+  personList:Array<Person>=[];
 
   constructor() { }
 

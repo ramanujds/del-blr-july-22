@@ -1,0 +1,113 @@
+
+
+<h2 appStyle>Input Person Details</h2>
+
+<form class="form-group" [formGroup]="personForm">
+    <div class="row">
+        <div class="col-md-2">
+<label for="personName">Name </label>
+</div>
+<div class="col-md-10">
+<input type="text" formControlName="personName" name="personName" id="personName"  
+                    placeholder="Enter Name"
+                   class="form-control"
+                   [class.is-invalid]=""
+                   >
+                </div>
+<p *ngIf="personForm.get('personName').touched">
+<small class="text-danger" *ngIf="personForm.get('personName').errors?.['required']">Name is required</small>
+<small class="text-danger" *ngIf="personForm.get('personName').errors?.['pattern']">Only letters and spaces are allowed</small>
+<small class="text-danger" *ngIf="personForm.get('personName').errors?.['minlength'] && !personForm.get('personName').errors?.['pattern']">Name is invalid</small>
+</p> 
+</div>
+
+<div class="row">
+    <div class="col-md-2">
+    <label for="joinDate">Joining Date </label>
+    </div>
+    <div class="col-md-10">
+    <input type="date" formControlName="joinDate" name="joinDate" id="joinDate"  
+                        placeholder="Enter Joining Date"
+                       class="form-control"
+                       >
+
+                       <p *ngIf="personForm.get('joinDate').touched">
+                        <small class="text-danger" *ngIf="personForm.get('joinDate').errors?.['datecheck']">Join Date should not exceed Current Date </small>
+                        </p> 
+    </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+        <label for="salary">Salary</label>
+        </div>
+        <div class="col-md-10">
+        <input type="number" formControlName="salary" name="salary" id="salary"   
+                            placeholder="Enter Salary"
+                           class="form-control"
+                           >
+        </div>
+        </div>
+
+    <div class="row">
+    <div class="col-md-2">
+        <label for="email">Email </label>
+
+</div>
+<div class="col-md-10">
+        <input type="email" formControlName="email" name="email" id="email"   
+                            placeholder="Enter Email"
+                           class="form-control"
+                           >
+        </div>
+        </div>
+
+
+        <div formGroupName="addressForm">
+
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="area">Area </label>
+            </div>
+         
+            <div class="col-md-10">
+                <input type="text" formControlName="area" name="area" id="area"   
+                                    placeholder="Area"
+                                   class="form-control"
+                                   >
+                </div>
+            </div>
+                
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="city">City</label>
+            </div>
+                <div class="col-md-10">
+                    <input type="text" formControlName="city" name="city" id="city"   
+                                        placeholder="Enter City"
+                                       class="form-control"
+                                       >
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <label for="pincode">Pincode</label>
+                </div>  
+
+                    <div class="col-md-10">
+                        <input type="number" formControlName="pincode" name="pincode" id="pincode"   
+                                            placeholder="Enter Pincode"
+                                           class="form-control"
+                                           >
+                        </div>
+                   
+
+        </div>
+        </div>
+        <div>
+            <button type="submit" [disabled]="" class="btn btn-primary">Add Person</button>
+        </div>
+</form>
+
+{{personForm.value|json}}
+
+<p>{{personForm.valid}}</p>

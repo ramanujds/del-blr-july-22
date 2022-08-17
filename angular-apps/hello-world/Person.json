@@ -1,0 +1,53 @@
+{
+  "persons": [
+    {
+      "id": 1,
+      "personName": "Kumar",
+      "joinDate": "2020-10-10",
+      "salary": 45000,
+      "email": "kumar@yahoo.com"
+    },
+    {
+      "id": 2,
+      "personName": "Rohit",
+      "joinDate": "2020-10-10",
+      "salary": 55000,
+      "email": "rohit@yahoo.com"
+    },
+    {
+      "id": 3,
+      "personName": "Suraj",
+      "joinDate": "2020-10-10",
+      "salary": 45000,
+      "email": "suraj@yahoo.com"
+    },
+    {
+      "personName": "Harsh Kumar",
+      "joinDate": "2021-5-10",
+      "salary": 68000,
+      "email": "harshkumar@yahoo.com",
+      "id": 4
+    },
+    {
+      "personName": "Gaurav",
+      "joinDate": "2022-08-02",
+      "salary": 54200,
+      "email": "gaurav@yahoo.com",
+      "id": 5
+    },
+    {
+      "personName": "Javed Hussain",
+      "joinDate": "2022-08-10",
+      "salary": 50000,
+      "email": "javed@yahoo.com",
+      "id": 6
+    },
+    {
+      "personName": "Priya",
+      "joinDate": "2022-05-11",
+      "salary": 46700,
+      "email": "priya@yahoo.com",
+      "id": 7
+    }
+  ]
+}

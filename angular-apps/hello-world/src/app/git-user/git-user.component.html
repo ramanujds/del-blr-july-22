@@ -1,0 +1,14 @@
+<h2>User Details</h2>
+
+<div>
+<input type="search" #userNameT>
+<button (click)="getGithubUserInfo(userNameT.value)" class="btn btn-dark-outline">Search</button>
+</div>
+
+<div *ngIf="user">
+    <p>Name : {{user.name}}</p>
+    <p>Login : {{user.login}}</p>
+    <p>Location : {{user.location}}</p>
+    <p>Followers : {{user.followers}}</p>
+    <img src="{{user.avatar_url}}" alt="No image available" height="200px" width="200px">
+</div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -9,6 +10,11 @@ import { FooterComponent } from './footer/footer.component';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { ShortenPipe } from './shorten.pipe';
 import { ViewPersonComponent } from './view-person/view-person.component';
+import { GitUserComponent } from './git-user/git-user.component';
+import { AppStyleDirective } from './app-style.directive';
+import { UpdatePersonComponent } from './update-person/update-person.component';
+import { AddPersonReactiveComponent } from './add-person-reactive/add-person-reactive.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +23,19 @@ import { ViewPersonComponent } from './view-person/view-person.component';
     FooterComponent,
     AddPersonComponent,
     ShortenPipe,
-    ViewPersonComponent
+    ViewPersonComponent,
+    GitUserComponent,
+    AppStyleDirective,
+    UpdatePersonComponent,
+    AddPersonReactiveComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

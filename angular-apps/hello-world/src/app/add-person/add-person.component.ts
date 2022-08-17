@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Person } from '../Person';
+import { PersonApiService } from '../person-api.service';
 import { PersonDataService } from '../person-data.service';
 
 @Component({
@@ -7,19 +9,21 @@ import { PersonDataService } from '../person-data.service';
   templateUrl: './add-person.component.html',
   styleUrls: ['./add-person.component.css']
 })
-export class AddPersonComponent implements OnInit {
+export class AddPersonComponent  {
 
-  constructor(private personService:PersonDataService) { }
+  constructor(private _personApiService:PersonApiService, private _router:Router) { }
 
 
 
-  ngOnInit(): void {
-  }
 
   addPerson(person:Person){
-    this.personService.addPerson(person)
+    this._personApiService.addPerson(person).subscribe(
+      data=>{
+        console.log(data)
+        this._router.navigate(['/view-person'])
+      }
+    )
   }
-
   
 
 }
